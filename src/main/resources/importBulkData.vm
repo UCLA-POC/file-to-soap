@@ -1,0 +1,43 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/types/" xmlns:erp="http://xmlns.oracle.com/apps/financials/commonModules/shared/model/erpIntegrationService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:importBulkData>
+         <!--Optional:-->
+         <typ:document>
+            <!--Optional:-->
+            <erp:Content>${body}</erp:Content>
+            <!--Optional:-->
+            <erp:FileName>${headers.CamelFileNameOnly}</erp:FileName>
+            <!--Optional:-->
+            <erp:ContentType>zip</erp:ContentType>
+            <!--Optional:-->
+            <erp:DocumentTitle>GL Interface</erp:DocumentTitle>
+            <!--Optional:-->
+            <erp:DocumentAuthor>${author}</erp:DocumentAuthor>
+            <!--Optional:-->
+            <erp:DocumentSecurityGroup>None</erp:DocumentSecurityGroup>
+            <!--Optional:-->
+            <erp:DocumentAccount>None</erp:DocumentAccount>
+            <!--Optional:-->
+            <erp:DocumentName>None</erp:DocumentName>
+            <!--Optional:-->
+            <erp:DocumentId>123456</erp:DocumentId>
+         </typ:document>
+         <!--Zero or more repetitions:-->
+         <typ:jobDetails>
+            <!--Optional:-->
+            <erp:JobName>oracle/apps/ess/financials/generalLedger/programs/common,JournalImportLauncher</erp:JobName>
+            <!--Optional:-->
+            <erp:ParameterList>300000001735135,Other,300000001735126,2018062502,N,N,N</erp:ParameterList>
+            <!--Optional:-->
+            <erp:JobRequestId></erp:JobRequestId>
+         </typ:jobDetails>
+         <!--Optional:-->
+         <typ:notificationCode></typ:notificationCode>
+         <!--Optional:-->
+         <typ:callbackURL></typ:callbackURL>
+         <!--Optional:-->
+         <typ:jobOptions></typ:jobOptions>
+      </typ:importBulkData>
+   </soapenv:Body>
+</soapenv:Envelope>
